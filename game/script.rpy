@@ -146,6 +146,8 @@ label rejected:
 
     # This ends the game.
 
+    return
+
 label selected:
 
     interviewer "I think you are well prepared."
@@ -155,6 +157,5 @@ label selected:
     "Life is set!!!..."
 
     # This ends the game.
-
 
     return
