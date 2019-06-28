@@ -1,0 +1,5 @@
+*.rpyb
+*.rpyc
+saves
+log.txt
+traceback.txt
