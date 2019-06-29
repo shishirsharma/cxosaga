@@ -5,12 +5,12 @@
 
 define you = Character("You")
 define college_friend  = Character("Friend")
-
 default role = "dev"
 
 # The game starts here.
 
 label start:
+    play music "music/adventurous/Dirac.mp3"
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -37,6 +37,7 @@ label start:
     you "Hi, My name is [youname]. I am in the final semester and looking to get a job, Luckily there is going to be a campus placement really soon."
 
 
+    play music "music/tense/Franklin.mp3"
     scene bg lecturehall
     show sylvie green normal
     college_friend "Hey [youname]!"
@@ -82,6 +83,7 @@ label tester:
 define interviewer = Character("Interviewer")
 
 label interview:
+    play music "music/investigative/Esam.mp3"
     scene bg whitehouse
     show eileen happy at right
 
@@ -138,6 +140,8 @@ label qa_interview:
 
 label rejected:
 
+    play music "music/sad/Dairen.mp3"
+
     interviewer "I don't think you are prepared for this"
 
     "I suggest you try again in 6 months."
@@ -150,6 +154,7 @@ label rejected:
 
 label selected:
 
+    play music "music/joyful/Asturias.mp3"
     interviewer "I think you are well prepared."
 
     interviewer "We can pay you 70k and you start next week. Good luck."
