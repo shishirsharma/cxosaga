@@ -102,6 +102,8 @@ label interview:
 
 
 
+# Green represents - A person thinking
+
 label dev_interview:
 
     if role == 'dev':
@@ -132,10 +134,61 @@ label dev_interview:
 
         interviewer 'Given a number n, find sum of first n natural numbers. To calculate the sum, we will use a recursive function recur_sum().'
 
+        you 'Thinking...'
+
+        you '...Do we need to use recursion?...' (what_color="#8c8")
+
+        you '...I might be able to do it without recursion...' (what_color="#8c8")
+
+        interviewer 'You need to use recursion!'
+
+        you '...Let me write some code...' (what_color="#8c8")
+
+        you '......' (what_color="#8c8")
+
+        you '...For some reason my code is running forever...' (what_color="#8c8")
+
+        you '...I don\'t think I can solve this...'
+
         jump rejected
 
 
 label qa_interview:
+        if role == 'tester':
+
+            interviewer 'There are 1000 wine bottles. One of the bottles contains poisoned wine. A rat dies after one hour of drinking the poisoned wine. How many minimum rats are needed to figure out which bottle contains poison in hour.'
+
+            you 'Thinking...'
+
+            you '...I know this...' (what_color="#8c8")
+
+            you '...This is a binary representation problem...' (what_color="#8c8")
+
+            you '......' (what_color="#8c8")
+
+            you '...Let me tell you how we can use 10 rats to solve this problem...' (what_color="#8c8")
+
+            you '......' (what_color="#8c8")
+
+            you '...Here is the solution...'
+
+            jump selected
+
+        else:
+
+            interviewer 'You have two ropes coated in an oil to help them burn. Each rope will take exactly 1 hour to burn all the way through. However, the ropes do not burn at constant rates—there are spots where they burn a little faster and spots where they burn a little slower, but it always takes 1 hour to finish the job.'
+
+            interviewer 'With a lighter to ignite the ropes, how can you measure exactly 45 minutes?'
+
+            you 'Thinking...' 
+
+            you '...Why don\'t we just use the datetime library to measure 45 minutes...' (what_color="#8c8")
+
+            you '...Who uses candles, I always use my mobile...' (what_color="#8c8")
+
+            you '...I don\'t think I can solve this...'
+
+            jump rejected
 
 
 label rejected:
