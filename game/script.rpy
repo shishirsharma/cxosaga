@@ -50,7 +50,7 @@ label start:
     show sylvie green surprised at right
     college_friend "Oh man!!! I totally forgot about that."
 
-    you "Dude, You really need to be preared. It's not going to be easy."
+    you "Dude, You really need to be prepared. It's not going to be easy."
 
     college_friend "I am still confused about what role I should apply for."
 
@@ -67,7 +67,7 @@ label start:
 label coding:
 
     you "I really love coding."
-    you "I am appling for dev roles."
+    you "I am applying for dev roles."
     $ role = 'dev'
 
     jump interview
@@ -75,7 +75,7 @@ label coding:
 label tester:
 
     you "I love to break my friend's code."
-    you "I am appling for QA roles."
+    you "I am applying for QA roles."
     $ role = 'tester'
 
     jump interview
