@@ -45,7 +45,7 @@ label start:
     show sylvie green normal at left
     college_friend "Why were you not in the party last night?"
 
-    you "Dude, I was prepareing for placements."
+    you "Dude, I was preparing for placements."
 
     show sylvie green surprised at right
     college_friend "Oh man!!! I totally forgot about that."
@@ -180,7 +180,7 @@ label qa_interview:
 
             interviewer 'With a lighter to ignite the ropes, how can you measure exactly 45 minutes?'
 
-            you 'Thinking...' 
+            you 'Thinking...'
 
             you '...Why don\'t we just use the datetime library to measure 45 minutes...' (what_color="#8c8")
 
