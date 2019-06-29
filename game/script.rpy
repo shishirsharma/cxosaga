@@ -19,10 +19,10 @@ label start:
     scene bg uni
 
     # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
+    # replace it by adding a file named "you happy.png" to the images
     # directory.
 
-    show eileen happy
+    show you casual
     with dissolve
 
     # These display lines of dialogue.
@@ -32,22 +32,22 @@ label start:
         youname = youname.strip()
 
         if not youname:
-            youname = "eileen"
+            youname = "you"
 
     you "Hi, My name is [youname]. I am in the final semester and looking to get a job, Luckily there is going to be a campus placement really soon."
 
 
     play music "music/tense/Franklin.mp3"
-    scene bg lecturehall
-    show sylvie green normal
+    #scene bg lecturehall
+    show you casual at left
+    show friend casual at right
     college_friend "Hey [youname]!"
 
-    show sylvie green normal at left
     college_friend "Why were you not in the party last night?"
 
     you "Dude, I was preparing for placements."
 
-    show sylvie green surprised at right
+    #show sylvie green surprised at right
     college_friend "Oh man!!! I totally forgot about that."
 
     you "Dude, You really need to be prepared. It's not going to be easy."
@@ -84,10 +84,13 @@ define interviewer = Character("Interviewer")
 
 label interview:
     play music "music/investigative/Esam.mp3"
-    scene bg whitehouse
-    show eileen happy at right
+    scene bg interview
+    show interviewer formal
 
     interviewer "I am [interviewer], I work as team lead at Unicorn Inc."
+
+    show you formal at left
+    show interviewer formal at right
 
     you "Hi [interviewer], I am [youname], I am looking for a [role] role."
 
@@ -105,6 +108,9 @@ label interview:
 # Green represents - A person thinking
 
 label dev_interview:
+    hide interviewer
+    hide you
+    show you formal
 
     if role == 'dev':
 
@@ -208,6 +214,9 @@ label rejected:
 label selected:
 
     play music "music/joyful/Asturias.mp3"
+    scene bg work
+    show interviewer formal
+
     interviewer "I think you are well prepared."
 
     interviewer "We can pay you 70k and you start next week. Good luck."
