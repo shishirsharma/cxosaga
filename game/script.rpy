@@ -3,8 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define you = Character("You")
-define college_friend  = Character("Friend")
+define you = Character("You", color="#8991DC")
+define cf  = Character("Friend", color="#89C5CC")
+define i = Character("Interviewer", color="#2B44FF")
+
 default role = "dev"
 
 # The game starts here.
@@ -41,20 +43,20 @@ label start:
     #scene bg lecturehall
     show you casual at left
     show friend casual at right
-    college_friend "Hey [youname]!"
+    cf "Hey [youname]!"
 
-    college_friend "Why were you not in the party last night?"
+    cf "Why were you not in the party last night?"
 
     you "Dude, I was preparing for placements."
 
     #show sylvie green surprised at right
-    college_friend "Oh man!!! I totally forgot about that."
+    cf "Oh man!!! I totally forgot about that."
 
     you "Dude, You really need to be prepared. It's not going to be easy."
 
-    college_friend "I am still confused about what role I should apply for."
+    cf "I am still confused about what role I should apply for."
 
-    college_friend "Have you decided?"
+    cf "Have you decided?"
 
     menu:
 
@@ -80,21 +82,20 @@ label tester:
 
     jump interview
 
-define interviewer = Character("Interviewer")
 
 label interview:
     play music "music/investigative/Esam.mp3"
     scene bg interview
-    show interviewer formal
+    show i formal
 
-    interviewer "I am [interviewer], I work as team lead at Unicorn Inc."
+    i "I am [i], I work as team lead at Unicorn Inc."
 
     show you formal at left
-    show interviewer formal at right
+    show i formal at right
 
-    you "Hi [interviewer], I am [youname], I am looking for a [role] role."
+    you "Hi [i], I am [youname], I am looking for a [role] role."
 
-    interviewer "Sounds good, So what should we start with today?"
+    i "Sounds good, So what should we start with today?"
 
     menu:
         "I really like algos.":
@@ -108,13 +109,13 @@ label interview:
 # Green represents - A person thinking
 
 label dev_interview:
-    hide interviewer
+    hide i
     hide you
     show you formal
 
     if role == 'dev':
 
-        interviewer 'Given a 2d grid map of \'1\'s (land) and \'0\'s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.'
+        i 'Given a 2d grid map of \'1\'s (land) and \'0\'s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.'
 
         you 'Thinking...'
 
@@ -138,7 +139,7 @@ label dev_interview:
 
     else:
 
-        interviewer 'Given a number n, find sum of first n natural numbers. To calculate the sum, we will use a recursive function recur_sum().'
+        i 'Given a number n, find sum of first n natural numbers. To calculate the sum, we will use a recursive function recur_sum().'
 
         you 'Thinking...'
 
@@ -146,7 +147,7 @@ label dev_interview:
 
         you '...I might be able to do it without recursion...' (what_color="#8c8")
 
-        interviewer 'You need to use recursion!'
+        i 'You need to use recursion!'
 
         you '...Let me write some code...' (what_color="#8c8")
 
@@ -162,7 +163,7 @@ label dev_interview:
 label qa_interview:
         if role == 'tester':
 
-            interviewer 'There are 1000 wine bottles. One of the bottles contains poisoned wine. A rat dies after one hour of drinking the poisoned wine. How many minimum rats are needed to figure out which bottle contains poison in hour.'
+            i 'There are 1000 wine bottles. One of the bottles contains poisoned wine. A rat dies after one hour of drinking the poisoned wine. How many minimum rats are needed to figure out which bottle contains poison in hour.'
 
             you 'Thinking...'
 
@@ -182,9 +183,9 @@ label qa_interview:
 
         else:
 
-            interviewer 'You have two ropes coated in an oil to help them burn. Each rope will take exactly 1 hour to burn all the way through. However, the ropes do not burn at constant rates—there are spots where they burn a little faster and spots where they burn a little slower, but it always takes 1 hour to finish the job.'
+            i 'You have two ropes coated in an oil to help them burn. Each rope will take exactly 1 hour to burn all the way through. However, the ropes do not burn at constant rates—there are spots where they burn a little faster and spots where they burn a little slower, but it always takes 1 hour to finish the job.'
 
-            interviewer 'With a lighter to ignite the ropes, how can you measure exactly 45 minutes?'
+            i 'With a lighter to ignite the ropes, how can you measure exactly 45 minutes?'
 
             you 'Thinking...'
 
@@ -201,7 +202,7 @@ label rejected:
 
     play music "music/sad/Dairen.mp3"
 
-    interviewer "I don't think you are prepared for this"
+    i "I don't think you are prepared for this"
 
     "I suggest you try again in 6 months."
 
@@ -215,11 +216,11 @@ label selected:
 
     play music "music/joyful/Asturias.mp3"
     scene bg work
-    show interviewer formal
+    show i formal
 
-    interviewer "I think you are well prepared."
+    i "I think you are well prepared."
 
-    interviewer "We can pay you 70k and you start next week. Good luck."
+    i "We can pay you 70k and you start next week. Good luck."
 
     "Life is set!!!..."
 
